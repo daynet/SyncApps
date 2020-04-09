@@ -19,7 +19,7 @@ export class ValendourComponent implements OnInit {
 
   getValues()
   {
-    this.http.get('http://localhost:59946/api/Valendour/').subscribe(response => {
+    this.http.get('http://localhost:5000/api/Valendour/').subscribe(response => {
 
     this.valendour = response;
     }, error => {
