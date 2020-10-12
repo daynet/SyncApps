@@ -4,7 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import {  BsDropdownModule, PaginationModule, TabsModule } from 'ngx-bootstrap';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -37,6 +38,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 
 
+
 export function tokenGetter() {
    return localStorage.getItem('token');
 }
@@ -56,7 +58,8 @@ export function tokenGetter() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+     
    ],
    imports: [
       BrowserModule,
@@ -65,10 +68,12 @@ export function tokenGetter() {
       FormsModule,
       ReactiveFormsModule,
       NgxGalleryModule,
+      PaginationModule.forRoot(),
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),
+      ButtonsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       FileUploadModule,
       JwtModule.forRoot({
